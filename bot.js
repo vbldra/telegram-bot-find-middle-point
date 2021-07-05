@@ -46,7 +46,7 @@ bot.help((ctx) => {
 
 // MAIN FUNCTIONALITY
 bot.command("/wtf", (ctx) => {
-  locationsData[ctx.update.message.chat.id] = {};
+  locationsDgit reata[ctx.update.message.chat.id] = {};
   ctx.reply("Send me your location.\nWhen you finished, send me /find");
 });
 
