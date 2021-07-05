@@ -1,20 +1,27 @@
-require("dotenv").config();
-const axios = require("axios");
-const { Telegraf } = require("telegraf");
+import axios from "axios";
+import { Telegraf, Markup } from "telegraf";
+import dotenv from "dotenv";
+dotenv.config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 let locationsData = {};
+
+const menu = Markup.keyboard([["🗺 Start", "📍 Find middle point"], ["👀 Help"]])
+  .oneTime()
+  .resize();
 
 // START
 bot.start((ctx) => {
   const chatType = ctx.update.message.chat.type;
   if (chatType === "private") {
-    ctx.reply(
-      "Hi!\nI will help you to find middle point between locations.\n\n1. Send /wtf to start\n2. Send locations\n3. Send /find to calculate middle point\n\nSend /help to see more."
+    ctx.replyWithHTML(
+      "BUTTON NOT WORKING, sorry\n\nHi!\nI will help you to find middle point between locations.\n\n1. Press button <b>🗺Start</b>, or send /wtf to start\n2. Send locations\n3. Press button <b>📍Find middle point</b>, or send /find to calculate middle point\n\nPress button <b>👀Help</b> or send /help to see more."
+      // menu
     );
   } else if (chatType === "group") {
     ctx.reply(
-      "Hi!\nI will help you and your friends to find where to meet.\n\n1. Send /wtf to start\n2. Each of you send me location\n3. Send /find to calculate center point between you and your friends\n\nSend /help to see more."
+      "BUTTON NOT WORKING, sorry\n\nHi!\nI will help you and your friends to find where to meet.\n\n1. Press button <b>🗺Start</b>, or send /wtf to start\n2. Each of you send me location\n3. Press button <b>📍Find middle point</b>, or send /find to calculate center point between you and your friends\n\nPress button <b>👀Help</b> or send /help to see more."
+      // menu
     );
   } else {
     ctx.reply("Hi. Please add me to private or group chat");
