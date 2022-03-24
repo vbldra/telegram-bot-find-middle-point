@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
+const backendLink = process.env.BACKEND_LINK;
 let locationsData = {};
 
 // START
@@ -107,7 +108,7 @@ bot.action("btn_find", async (ctx) => {
     (async () => {
       try {
         const response = await axios.post(
-          "https://wir-treffen-freunde.herokuapp.com/bot",
+          `${backendLink}`,
           Object.values(dataToSend)
         );
         console.log(dataToSend);
