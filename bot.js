@@ -46,14 +46,14 @@ bot.help((ctx) => {
   const chatType = ctx.update.message.chat.type;
   if (chatType === "private") {
     ctx.replyWithHTML(
-      `1. Press button <b>[ 🗺 Send location ]</b>\n2. Send me your locations.\n3. Press button <b>[ 📍 Find middle point ]</b> to calculate the middle point.\n\nYou can add me to your group channel and I can help you and your friends to find where to meet.\nTo see more you can visit our website <a href='https://wirtreffenfreunde.herokuapp.com/'>Wir Treffen Freunde</a>`,
+      `1. Press button <b>[ 🗺 Send location ]</b>\n2. Send me your locations.\n3. Press button <b>[ 📍 Find middle point ]</b> to calculate the middle point.\n\nYou can add me to your group channel and I can help you and your friends to find where to meet.\nTo see more you can visit our website <a href='https://wir-treffen-freunde.netlify.app/'>Wir Treffen Freunde</a>`,
       Markup.inlineKeyboard([
         [Markup.button.callback("🗺 Send location", "btn_start")],
       ])
     );
   } else if (chatType === "group") {
     ctx.replyWithHTML(
-      `1. Press button <b>[ 🗺 Send location ]</b>\n2. Send me the location of everyone who wants to meet. You can correct your location, I will take last coordinates.\n3. Press button <b>[ 📍 Find middle point ]</b> to calculate the middle point between you and your friends.\n\nYou can start with me private chat and I can help you to find middle point between any locations.\nTo see more you can visit our website <a href='https://wirtreffenfreunde.herokuapp.com/'>Wir Treffen Freunde</a>`,
+      `1. Press button <b>[ 🗺 Send location ]</b>\n2. Send me the location of everyone who wants to meet. You can correct your location, I will take last coordinates.\n3. Press button <b>[ 📍 Find middle point ]</b> to calculate the middle point between you and your friends.\n\nYou can start with me private chat and I can help you to find middle point between any locations.\nTo see more you can visit our website <a href='https://wir-treffen-freunde.netlify.app/'>Wir Treffen Freunde</a>`,
       Markup.inlineKeyboard([
         [Markup.button.callback("🗺 Send location", "btn_start")],
       ])
