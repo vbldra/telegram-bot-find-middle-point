@@ -163,6 +163,7 @@ bot.action("btn_find", async (ctx) => {
   }
 });
 
+console.log("Server is running...")
 bot.launch();
 
 // Enable graceful stop
